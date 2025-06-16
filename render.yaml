@@ -5,12 +5,10 @@ services:
     buildCommand: cd backend && npm install
     startCommand: cd backend && node server.js
     plan: free
-    envVars: []
 
   - type: web
     name: hotel-frontend
     env: node
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npx serve -s build
+    startCommand: cd frontend && ./node_modules/.bin/serve -s build
     plan: free
-    envVars: []
