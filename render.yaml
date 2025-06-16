@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hotel-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    plan: free
+    envVars: []
+
+  - type: web
+    name: hotel-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npx serve -s build
+    plan: free
+    envVars: []
